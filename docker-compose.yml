@@ -10,7 +10,6 @@ services:
       - "9080:8080"
       - "5005:5000"
       - "50005:50000"
-
   nexus:
     image: sonatype/nexus3:3.16.2
     ports:

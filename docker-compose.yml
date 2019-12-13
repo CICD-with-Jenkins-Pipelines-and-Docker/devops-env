@@ -1,11 +1,12 @@
 version: '3.1'
 services:
   jenkins:
-    image: istresearch/jenkins:latest
+    image: 256cb12e72d6
     container_name: jenkins
-    user: jenkins
+    user: root
     environment:
       JENKINS_HOST_HOME: "/opt/jenkins/data/jenkins"
+      - DOCKER_HOST=tcp://host.docker.internal:2375
     ports:
       - "9080:8080"
       - "5005:5000"

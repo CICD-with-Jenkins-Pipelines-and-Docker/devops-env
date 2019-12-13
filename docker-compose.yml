@@ -1,0 +1,17 @@
+version: '3.1'
+services:
+  jenkins:
+    image: 256cb12e72d6 
+    container_name: jenkins
+    user: jenkins
+    environment:
+      JENKINS_HOST_HOME: "/opt/jenkins/data/jenkins"
+    ports:
+      - "9080:8080"
+      - "5005:5000"
+      - "50005:50000"
+
+  nexus:
+    image: sonatype/nexus3:3.16.2
+      ports:
+      - "9081:8081"

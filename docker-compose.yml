@@ -7,6 +7,9 @@ services:
     environment:
       JENKINS_HOST_HOME: "/opt/jenkins/data/jenkins"
       - DOCKER_HOST=tcp://host.docker.internal:2375
+       networks:
+            - frontend
+
     ports:
       - "9080:8080"
       - "5005:5000"
@@ -15,3 +18,8 @@ services:
     image: sonatype/nexus3:3.16.2
     ports:
       - "9081:8081"
+networks:
+    frontend: null
+    backend: null
+volumes:
+    db-data: null

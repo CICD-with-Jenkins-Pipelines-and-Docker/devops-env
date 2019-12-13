@@ -13,5 +13,5 @@ services:
 
   nexus:
     image: sonatype/nexus3:3.16.2
-      ports:
+    ports:
       - "9081:8081"
